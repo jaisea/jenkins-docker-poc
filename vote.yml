@@ -11,6 +11,9 @@ spec:
    matchLabels:
     app: example-voting-app
  template:
+   metadata:
+      labels:
+        app: nginx
    spec:
      containers:
        - name: redis
