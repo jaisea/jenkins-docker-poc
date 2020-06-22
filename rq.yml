@@ -4,11 +4,11 @@ metadata:
     name: demo-namespace
 spec:
     hard:
-      limits.cpu: "1"
-      limits.memory: 2Gi
+      limits.cpu: "4"
+      limits.memory: 8Gi
       persistentvolumeclaims: "4"
       pods: "20"
-      requests.cpu: 50m
-      requests.memory: 100m
-      requests.storage: 4Gi
-      services.loadbalancers: "0"
+      requests.cpu: "3"
+      requests.memory: 7Gi
+      requests.storage: 20Gi
+      services.loadbalancers: "3"
