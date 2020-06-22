@@ -9,8 +9,6 @@ spec:
  replicas: 1
  selector:
    matchLabels:
-    name: redis
-    role: redisdb
     app: example-voting-app
  template:
    spec:
