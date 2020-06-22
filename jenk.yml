@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: jenkins-app
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+    app: jenkins-app
+ template:
+   metadata:
+      labels:
+        app: jenkins-app
+   spec:
+      containers:
+      - name: apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: redis
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+    app: example-voting-app
+ template:
+   metadata:
+      labels:
+        app: example-voting-app
+   spec:
+        image: jenkins/jenkins:lts
+        ports:
+        - containerPort: 8080
+volumeMounts:
+          - name: jenkins-home
+            mountPath: /var/jenkins_home
+      volumes:
+        - name: jenkins-home
+          emptyDir: {}
