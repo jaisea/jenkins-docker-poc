@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: jenkins-app
+ name: jenkins
 spec:
  replicas: 1
  selector:
@@ -13,20 +13,7 @@ spec:
         app: jenkins-app
    spec:
       containers:
-      - name: apiVersion: apps/v1
-kind: Deployment
-metadata:
- name: redis
-spec:
- replicas: 1
- selector:
-   matchLabels:
-    app: example-voting-app
- template:
-   metadata:
-      labels:
-        app: example-voting-app
-   spec:
+      - name: jenkins
         image: jenkins/jenkins:lts
         ports:
         - containerPort: 8080
